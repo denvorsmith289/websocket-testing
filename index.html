@@ -1,0 +1,12 @@
+<script>
+const ws = new WebSocket("http://uk.sshws.net/");
+
+ws.onopen = () => {
+  console.log("Connected to bridge!");
+  ws.send("Hello from GitHub Pages!");
+};
+
+ws.onmessage = (e) => {
+  console.log("Server:", e.data);
+};
+</script>
